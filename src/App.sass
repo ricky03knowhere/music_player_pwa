@@ -1,0 +1,127 @@
+html, body
+  margin: 0
+  padding: 0
+
+.root
+  min-height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background-color: #152029
+
+
+.container
+  background-color: #aaa7
+  filter: blur(3px)
+  max-width: 600px !important
+  text-align: center
+  padding: 15px
+  border-radius: 20px
+
+  .img-container
+    position: relative
+    filter: none
+    display: flex
+    justify-content: center
+    align-items: center
+
+    #canvasElement
+      position: absolute
+      // left: 25px
+      top: 0
+      border-radius: 100%
+
+  .img
+    filter: none
+    height: 360px
+    width: 360px
+    filter: blur(1px)
+    border-radius: 100%
+
+  #waveType, #waveType option
+    filter: none
+    text-transform: capitalize  
+
+  .input
+    filter: none
+    width: 90%
+    margin-top: 15px
+    margin-bottom: 15px
+    appearance:  none
+    height: 1px
+
+    &:focus
+      outline: none
+    
+    &::-webkit-slider-thumb
+      appearance: none
+      height: 25px
+      width: 25px
+      background-color: #fff
+      border-radius: 100%
+
+    
+  .song-info 
+    filter: none
+    h1
+      font-size: 4rem
+      color: #fff
+      font-family: 'Nerko One', cursive      
+    p
+      color: #ddd
+      font-family: sans-serif
+
+    
+  .controller
+    display: flex
+    justify-content: center
+    align-items: center
+    padding-top: 20px
+
+    .btn
+      height: 80px
+      width: 80px
+
+    .btn-play-pause
+      margin: 0 25px
+    
+  .setting .form-group input, .setting #waveType
+    border-radius: 20px
+    height: 40px
+
+  label, .setting #waveType
+    color: #fff
+    font-weight: bolder
+
+  .setting #waveType
+    color: #000
+    font-size: .9rem
+    letter-spacing: 1.5px
+
+@media ( max-width: 500px )
+  .img-container span .img, #canvasElement
+    width: 250px
+    height: 250px
+    margin-bottom: 30px
+  
+  #canvasElement
+    transform: translate(16%, 3%y)
+
+  .container
+    background: none
+
+  .song-info h1
+    font-size: 2rem !important
+  
+.animation-spin
+  animation-name: spin
+  animation-timing-function: linear
+  animation-duration: 60s
+  animation-iteration-count: infinite
+
+@keyframes spin
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+    
